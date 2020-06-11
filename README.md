@@ -5,16 +5,18 @@ Use the following command
 ```shell
     $ sudo apt-get install afl
 ```
-Or
-    1. Clone git repository of AFL
-    ```shell
-        $ git clone https://github.com/google/AFL.git
-    ```
-    2. Change directory and run make and make install
-    ```shell
-        $ cd AFL
-        $ make and make install
-    ```
+
+Or follow the steps given below: 
+
+1. Clone git repository of AFL
+```shell
+    $ git clone https://github.com/google/AFL.git
+```
+2. Change directory and run make and make install
+```shell
+    $ cd AFL
+    $ make and make install
+```
 
 There are two folders in the repository:
 
@@ -35,9 +37,17 @@ Start fuzzing the code using the following commands :
 ```shell
     $ afl-fuzz -i input/ -o output/ ./div -nr input/in
 ```
+There's only one path found (no if-else) and crashes get stored in the `output` folder.
+
 ## Test-tcpdump
 
 We try to fuzz a software tcpdump which is a data-network packet analyzer.
 
 The folder contains the source code of tcpdump.
+
+Follow [this](https://www.loginsoft.com/blog/2018/02/02/discovering-vulnerabilities-with-afl-fuzzer/) link for running afl-fuzz on the target.
+
+Ran it for 9 hours. The fuzzer's working fine but no crashes or hangs were found.
+
+
 
